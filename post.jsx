@@ -57,11 +57,9 @@ module.exports = ({ post, nsfw }) => <Modal size={ Modal.Sizes.LARGE }>
         <Button
             style={{ marginRight: "10px"}}
             onClick={() => {
-                open((() => React.createElement(ConfirmModal, {onConfirm: (() => {
-                    messages.sendMessage(channels.getChannelId(), { content: post.file.url })
-                    close()
-                }).bind(this)}, "You are about to post a" + (({s: " safe", q: " QUESTIONABLE", e: "n EXPLICIT"})[post.rating]) + " rated post. Do you really want to post this e621 submission in your selected channel?")).bind(this))
-            }}
+                messages.sendMessage(channels.getChannelId(), { content: post.file.url })
+                close()}
+            }
             color={post.rating === "e" || post.rating === "q" ? Button.Colors.YELLOW : Button.Colors.GREEN}
         >
         Send File URL
@@ -69,11 +67,9 @@ module.exports = ({ post, nsfw }) => <Modal size={ Modal.Sizes.LARGE }>
         <Button
             style={{ marginRight: "10px"}}
             onClick={() => {
-                open((() => React.createElement(ConfirmModal, {onConfirm: (() => {
-                    messages.sendMessage(channels.getChannelId(), { content: `https://${nsfw ? "e621" : "e926"}.net/posts/${post.id}` })
-                    close()
-                }).bind(this)}, "You are about to post a" + (({s: " safe", q: " QUESTIONABLE", e: "n EXPLICIT"})[post.rating]) + " rated post. Do you really want to post this e621 submission in your selected channel?")).bind(this))
-            }}
+                messages.sendMessage(channels.getChannelId(), { content: `https://${nsfw ? "e621" : "e926"}.net/posts/${post.id}` })
+                close()}
+            }
             color={post.rating === "e" || post.rating === "q" ? Button.Colors.YELLOW : Button.Colors.GREEN}
         >
         Send Post URL
