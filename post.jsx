@@ -60,7 +60,7 @@ module.exports = ({ post, nsfw }) => <Modal size={ Modal.Sizes.LARGE }>
                 messages.sendMessage(channels.getChannelId(), { content: post.file.url })
                 close()}
             }
-            color={post.rating === "e" || post.rating === "q" ? Button.Colors.YELLOW : Button.Colors.GREEN}
+            color={post.rating === "e" ? Button.Colors.RED : post.rating === "q" ? Button.Colors.YELLOW : Button.Colors.GREEN}
         >
         Send File URL
         </Button>
@@ -70,7 +70,7 @@ module.exports = ({ post, nsfw }) => <Modal size={ Modal.Sizes.LARGE }>
                 messages.sendMessage(channels.getChannelId(), { content: `https://${nsfw ? "e621" : "e926"}.net/posts/${post.id}` })
                 close()}
             }
-            color={post.rating === "e" || post.rating === "q" ? Button.Colors.YELLOW : Button.Colors.GREEN}
+            color={post.rating === "e" ? Button.Colors.RED : post.rating === "q" ? Button.Colors.YELLOW : Button.Colors.GREEN}
         >
         Send Post URL
         </Button>
