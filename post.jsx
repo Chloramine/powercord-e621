@@ -3,6 +3,7 @@ const { FormTitle, Card, Text, Divider, Button, FormNotice } = require("powercor
 const { close, open } = require("powercord/modal")
 const { React, getModule, messages, channels } = require("powercord/webpack")
 const { clipboard, shell } = require("electron")
+const Settings = require("./Settings.jsx")
 
 const ConfirmModal = require("./confirmation.jsx")
 
@@ -74,10 +75,5 @@ module.exports = ({ post, nsfw }) => <Modal size={ Modal.Sizes.LARGE }>
         >
         Send Post URL
         </Button>
-        <Text
-        style={{ marginRight: "15%", marginTop: "1%" }}
-        >
-        Please be mindful of where you send posts! {">"}w0
-        </Text>
     </Modal.Footer>
 </Modal>

@@ -19,6 +19,12 @@ module.exports = class Settings extends React.PureComponent {
             onChange={() => toggleSetting("nsfw")}>
                 NSFW 
             </SwitchItem>
+            <SwitchItem
+            note="If this is off, posts will require a two-step confirmation before posting the file/link."
+            value={getSetting("two-step", false)}
+            onChange={() => toggleSetting("two-step")}>
+                Two-Step Confirmation
+            </SwitchItem>
             <TextInput
             note="Your E621 User-Agent. This is an example of how it should look: 'MyProject/1.0 (by username on e621)'"
             defaultValue={getSetting("headers", "Powercord/1.0 (<e621username>)")}
